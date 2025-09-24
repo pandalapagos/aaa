@@ -3,171 +3,249 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Triple AAA - Agua Potable y Acueducto | Cuidemos el Agua</title>
-  <meta name="description" content="Triple AAA - Información sobre agua potable y acueducto. Consejos prácticos para cuidar el agua y garantizar su uso responsable.">
-  <meta name="author" content="Triple AAA">
-  <meta name="robots" content="index,follow">
-  <!-- Structured data (Organization) -->
+  <title>RastreoPaquetes — Seguimiento centralizado de envíos en Colombia</title>
+  <meta name="description" content="RastreoPaquetes conecta APIs de mensajería en Colombia y ofrece seguimiento en tiempo real para tus envíos. Integración rápida, notificaciones y panel centralizado.">
+  <meta name="keywords" content="rastreo,paquetería,envíos,Colombia,seguimiento,API,mensajería">
+  <link rel="canonical" href="https://tusitio.com/">
+  <!-- Open Graph / Social -->
+  <meta property="og:title" content="RastreoPaquetes — Seguimiento centralizado de envíos" />
+  <meta property="og:description" content="Conecta APIs de mensajería de Colombia y sigue todos tus envíos desde un solo lugar. Ideal para e‑commerce y operaciones logísticas." />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="es_CO" />
+  <meta property="og:url" content="https://tusitio.com/" />
+  <meta property="og:image" content="/share-image.png" />
+
+  <!-- Schema JSON-LD -->
   <script type="application/ld+json">
   {
-    "@context":"https://schema.org",
-    "@type":"Organization",
-    "name":"Triple AAA",
-    "url":"https://www.triple-aaa.example/",
-    "logo":"https://www.triple-aaa.example/logo.png",
-    "sameAs":[]
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "RastreoPaquetes",
+    "image": "https://tusitio.com/logo.png",
+    "@id": "https://tusitio.com/",
+    "url": "https://tusitio.com/",
+    "telephone": "+57-1-800-000-0000",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Bogotá",
+      "addressRegion": "Cundinamarca",
+      "addressCountry": "CO"
+    },
+    "priceRange": "$$"
   }
   </script>
+
   <style>
-    /* Simple, responsive, accessible styles */
-    :root{--accent:#0077b6;--muted:#666;--bg:#f7fbff;font-family:system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial}
-    *{box-sizing:border-box}
-    body{margin:0;background:var(--bg);color:#0b2140;line-height:1.5}
-    header{background:white;padding:1rem 1.25rem;box-shadow:0 2px 6px rgba(6,24,40,.06);position:sticky;top:0;z-index:10}
-    .container{max-width:1024px;margin:0 auto;padding:1rem}
-    .brand{display:flex;align-items:center;gap:.75rem}
-    .brand img{height:44px;width:44px;object-fit:contain}
-    nav a{margin-left:1rem;color:var(--accent);text-decoration:none;font-weight:600}
-    main{padding:1.25rem}
-    .grid{display:grid;grid-template-columns:1fr;gap:1rem}
-    @media(min-width:800px){.grid{grid-template-columns:2fr 1fr}}
-    .card{background:white;padding:1rem;border-radius:12px;box-shadow:0 6px 18px rgba(11,33,64,.06)}
-    h1{margin:0 0 .5rem;font-size:1.8rem}
-    h2{margin:0 0 .5rem;font-size:1.2rem}
-    p{margin:.6rem 0}
-    ul{margin:.5rem 0 1rem 1.25rem}
-    footer{margin-top:1rem;padding:1rem;background:#fff;border-top:1px solid #e9f1f7}
-    .cta{display:inline-block;padding:.6rem 1rem;border-radius:10px;background:var(--accent);color:white;text-decoration:none;font-weight:700}
-    .rights{font-size:.9rem;color:var(--muted);margin-top:.6rem}
-    .privacy{font-size:.9rem;color:var(--muted)}
-    .stat{display:flex;gap:1rem;align-items:center}
-    .stat strong{font-size:1.4rem}
-    .notice{background:#fff4e5;border-left:4px solid #ffb020;padding:.6rem;border-radius:8px}
-    /* Accessibility: focus outlines */
-    a:focus,button:focus,input:focus,textarea:focus{outline:3px solid #cfeefd;outline-offset:2px}
-    form input,form textarea{width:100%;padding:.6rem;border:1px solid #d9e6f2;border-radius:8px}
-    .small{font-size:.9rem;color:var(--muted)}
+    /* Simple, fast, responsive styles for a Google Ads landing page */
+    :root{
+      --accent:#0b6efd;
+      --muted:#6b7280;
+      --bg:#f8fafc;
+      --max-width:1100px;
+      font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+    }
+    html,body{height:100%;}
+    body{margin:0;background:var(--bg);color:#0b1220;-webkit-font-smoothing:antialiased}
+    .container{max-width:var(--max-width);margin:0 auto;padding:28px}
+    header{display:flex;align-items:center;justify-content:space-between;padding:12px 0}
+    .logo{display:flex;align-items:center;gap:12px}
+    .logo img{height:44px}
+    .cta-btn{background:var(--accent);color:white;padding:10px 16px;border-radius:8px;text-decoration:none;font-weight:600}
+
+    .hero{display:grid;grid-template-columns:1fr;gap:20px;align-items:center;padding:36px 0}
+    .hero h1{font-size:28px;margin:0 0 12px}
+    .hero p{margin:0 0 18px;color:var(--muted)}
+    .tracker{display:flex;gap:8px}
+    .tracker input{flex:1;padding:12px;border-radius:8px;border:1px solid #e6eef8;font-size:15px}
+    .tracker button{padding:12px 16px;border-radius:8px;border:none;background:var(--accent);color:#fff;font-weight:600}
+
+    .features{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;margin:20px 0}
+    .card{background:white;padding:16px;border-radius:12px;box-shadow:0 6px 18px rgba(12,20,30,0.06)}
+    .small{font-size:13px;color:var(--muted)}
+
+    .how{display:grid;grid-template-columns:1fr;gap:16px;margin-top:18px}
+    .steps{display:flex;flex-direction:column;gap:12px}
+    .step{display:flex;gap:12px;align-items:flex-start}
+    .step .num{background:#eef6ff;color:var(--accent);padding:8px;border-radius:8px;font-weight:700}
+
+    footer{margin-top:28px;padding:18px 0;color:var(--muted);font-size:13px}
+
+    @media(min-width:880px){
+      .hero{grid-template-columns:1fr 420px}
+      .hero h1{font-size:36px}
+    }
+
+    /* Quick contact form */
+    form .row{display:flex;flex-direction:column;gap:8px;margin-bottom:10px}
+    form input, form textarea{padding:10px;border-radius:8px;border:1px solid #e6eef8}
+    form button{background:#06b6d4;color:#fff;padding:10px;border-radius:8px;border:none;font-weight:600}
+
+    .badge-row{display:flex;gap:8px;flex-wrap:wrap}
+    .badge{background:#fff;padding:8px 12px;border-radius:999px;box-shadow:0 4px 10px rgba(12,20,30,0.04);font-weight:600}
   </style>
 </head>
 <body>
-  <header role="banner">
-    <div class="container" style="display:flex;justify-content:space-between;align-items:center">
-      <div class="brand">
-        <img src="https://www.triple-aaa.example/logo.png" alt="Logo Triple AAA">
+  <div class="container">
+    <header>
+      <div class="logo">
+        <img src="/logo.png" alt="RastreoPaquetes">
         <div>
-          <div style="font-weight:800">Triple AAA</div>
-          <div class="small">Agua potable y acueducto — Cuidemos el recurso</div>
+          <div style="font-weight:700">RastreoPaquetes</div>
+          <div class="small">Seguimiento centralizado | Integraciones con mensajerías CO</div>
         </div>
       </div>
-      <nav aria-label="Sitio principal">
-        <a href="#importancia">Importancia</a>
-        <a href="#consejos">Consejos</a>
-        <a href="#contacto">Contacto</a>
+      <nav>
+        <a href="#contact" class="cta-btn">Solicitar demo</a>
       </nav>
-    </div>
-  </header>
+    </header>
 
-  <main class="container">
-    <div class="grid">
-      <section class="card" aria-labelledby="titulo-principal">
-        <h1 id="titulo-principal">Cuidar el agua es cuidar la vida</h1>
-        <p>En Triple AAA trabajamos para garantizar agua potable segura y un acueducto sostenible. Esta página explica por qué el agua es un recurso crítico y ofrece consejos prácticos para su uso responsable.</p>
+    <main>
+      <section class="hero">
+        <div>
+          <h1>Rastrea todos tus envíos en Colombia desde un solo lugar</h1>
+          <p>Integramos con las principales empresas de mensajería en Colombia para ofrecerte seguimiento en tiempo real, alertas automáticas y un panel centralizado para tu e‑commerce o operación logística.</p>
+          <div class="tracker" aria-label="Buscador de guía">
+            <input id="trackingNumber" type="text" placeholder="Ingresa número de guía (ej. 123456789)" aria-label="Número de guía">
+            <button id="trackBtn">Rastrear</button>
+          </div>
 
-        <h2 id="importancia">¿Por qué es importante cuidar el agua?</h2>
-        <ul>
-          <li>Salud pública: el acceso a agua limpia reduce enfermedades.</li>
-          <li>Medio ambiente: ríos y ecosistemas dependen del manejo responsable del agua.</li>
-          <li>Economía: conservar agua reduce costos operativos en acueductos y hogares.</li>
-        </ul>
+          <div style="margin-top:14px" class="badge-row">
+            <div class="badge">Integraciones API</div>
+            <div class="badge">Alertas SMS/Email</div>
+            <div class="badge">Soporte 24/7</div>
+          </div>
 
-        <h2 id="consejos">Consejos prácticos para ahorrar agua</h2>
-        <ul>
-          <li>Revisa y repara fugas: una llave que gotea puede desperdiciar miles de litros al año.</li>
-          <li>Usa electrodomésticos eficientes (lavadoras y lavavajillas con certificación).</li>
-          <li>No dejes el grifo abierto mientras te cepillas los dientes o lavas platos a mano.</li>
-          <li>Recolecta agua de lluvia para riego cuando sea posible.</li>
-          <li>Elige plantas nativas y de bajo consumo para tu jardín.</li>
-        </ul>
-
-        <div class="notice" role="note">
-          <strong>Dato:</strong> Pequeños cambios en casa suman mucho a nivel comunitario. Comparte estas prácticas con vecinos y familiares.
+          <p style="margin-top:12px" class="small">¿No tienes integración todavía? <a href="#contact">Solicita una demo gratuita</a> y te ayudamos a conectar tus envíos en menos de 48 horas.</p>
         </div>
 
-        <h2>Participa</h2>
-        <p>Si quieres colaborar con campañas locales o reportar una avería en el acueducto, utiliza el formulario de contacto. También invitamos a las escuelas a usar este contenido para educación ambiental.</p>
-
+        <aside>
+          <div class="card">
+            <strong>Plan para e‑commerce</strong>
+            <p class="small">Desde COP 49.900 / mes — Seguimiento ilimitado, webhooks y soporte prioritario.</p>
+            <ul class="small">
+              <li>Integración con 12+ operadores locales</li>
+              <li>Notificaciones configurables</li>
+              <li>Historial y reportes</li>
+            </ul>
+            <div style="margin-top:12px;text-align:right"><a class="cta-btn" href="#contact">Contratar</a></div>
+          </div>
+        </aside>
       </section>
 
-      <aside class="card" aria-labelledby="aside-titulo">
-        <h2 id="aside-titulo">Recursos rápidos</h2>
-        <div class="stat">
-          <div>
-            <div class="small">Consumo medio por persona</div>
-            <strong>— L/diarios —</strong>
+      <section>
+        <h2>¿Cómo funciona?</h2>
+        <div class="how">
+          <div class="steps">
+            <div class="step card">
+              <div class="num">1</div>
+              <div>
+                <strong>Conecta tu tienda o API</strong>
+                <div class="small">Ofrecemos conectores para plataformas comunes (WooCommerce, Shopify) y endpoints para integraciones personalizadas.</div>
+              </div>
+            </div>
+
+            <div class="step card">
+              <div class="num">2</div>
+              <div>
+                <strong>Rastreo centralizado</strong>
+                <div class="small">Nuestro motor consulta las APIs de los operadores y unifica estados en un formato estándar.</div>
+              </div>
+            </div>
+
+            <div class="step card">
+              <div class="num">3</div>
+              <div>
+                <strong>Notificaciones y reportes</strong>
+                <div class="small">Envía alertas por SMS, correo o webhooks a tu sistema. Genera reportes diarios o por rango de fechas.</div>
+              </div>
+            </div>
           </div>
         </div>
+      </section>
 
-        <h3>Guía para detectar fugas</h3>
-        <p class="small">Revisa medidores, observa manchas de humedad, escucha goteos. Si detectas una fuga, repórtala inmediatamente.</p>
-
-        <h3>Política de privacidad y anuncios</h3>
-        <p class="small">Este sitio puede mostrar anuncios mediante Google AdSense u otras plataformas publicitarias. Para cumplir con requisitos de privacidad y anuncios, incluimos una política de privacidad y consentimiento de cookies. Ver <a href="#privacidad">Política de privacidad</a>.</p>
-
-        <!-- Placeholder where Google AdSense code should be added by site owner. -->
-        <div style="margin-top:1rem;padding:1rem;border:1px dashed #e1eef8;border-radius:8px;text-align:center">
-          <p class="small"><strong>Espacio de anuncios</strong></p>
-          <p class="small">Inserte aquí el código de Google AdSense o unidades publicitarias una vez la cuenta esté aprobada.</p>
+      <section style="margin-top:18px">
+        <h2>Integraciones destacadas</h2>
+        <div class="features">
+          <div class="card">
+            <strong>Envíos Nacionales</strong>
+            <p class="small">Coordinamos con mensajerías locales para obtener la última milla exacta.</p>
+          </div>
+          <div class="card">
+            <strong>Reportes a la medida</strong>
+            <p class="small">Exporta CSV, PDF y accede a métricas en tiempo real.</p>
+          </div>
+          <div class="card">
+            <strong>Seguridad</strong>
+            <p class="small">Conexiones seguras via HTTPS, claves API y permisos por rol.</p>
+          </div>
+          <div class="card">
+            <strong>Soporte local</strong>
+            <p class="small">Equipo en Colombia disponible por chat y correo.</p>
+          </div>
         </div>
+      </section>
 
-      </aside>
-    </div>
-
-    <section class="card" id="contacto" aria-labelledby="contacto-titulo" style="margin-top:1rem">
-      <h2 id="contacto-titulo">Contacto</h2>
-      <p class="small">¿Tienes dudas, quieres reportar una falla o colaborar? Escríbenos.</p>
-      <form action="#" method="post" onsubmit="event.preventDefault();alert('Formulario simulado — integre con su backend.');">
-        <label for="name">Nombre</label>
-        <input id="name" name="name" required aria-required="true">
-        <label for="email">Correo electrónico</label>
-        <input id="email" name="email" type="email" required aria-required="true">
-        <label for="message">Mensaje</label>
-        <textarea id="message" name="message" rows="4" required></textarea>
-        <div style="display:flex;gap:.5rem;margin-top:.6rem;align-items:center">
-          <button class="cta" type="submit">Enviar</button>
-          <button type="reset" style="background:transparent;border:1px solid #e6f3fb;padding:.5rem .8rem;border-radius:8px">Limpiar</button>
+      <section id="contact" style="margin-top:18px">
+        <h2>Solicita una demo</h2>
+        <div class="card">
+          <form id="contactForm" action="mailto:ventas@tusitio.com" method="post" enctype="text/plain" onsubmit="return validateForm()">
+            <div class="row">
+              <label class="small">Nombre</label>
+              <input type="text" id="name" name="Nombre" required>
+            </div>
+            <div class="row">
+              <label class="small">Empresa</label>
+              <input type="text" id="company" name="Empresa">
+            </div>
+            <div class="row">
+              <label class="small">Correo</label>
+              <input type="email" id="email" name="Correo" required>
+            </div>
+            <div class="row">
+              <label class="small">Mensaje / Requerimientos</label>
+              <textarea id="message" name="Mensaje" rows="4"></textarea>
+            </div>
+            <input type="hidden" name="utm_source" id="utm_source">
+            <button type="submit">Solicitar demo</button>
+          </form>
         </div>
-      </form>
-    </section>
+      </section>
 
-    <section class="card" id="privacidad" aria-labelledby="privacidad-titulo" style="margin-top:1rem">
-      <h2 id="privacidad-titulo">Política de privacidad (resumen)</h2>
-      <p class="small">Este sitio utiliza cookies y tecnologías similares para mejorar la experiencia y mostrar anuncios. No almacenamos datos sensibles en este sitio de demostración. Para cumplir con Google AdSense debe publicar una política de privacidad completa y obtener el consentimiento de usuarios según las leyes aplicables (p. ej. GDPR, ePrivacy, o su normativa local).</p>
-      <p class="small">Asegúrese de —antes de publicar anuncios— agregar una política completa, un aviso de cookies y mecanismos de consentimiento.</p>
-    </section>
+    </main>
 
-  </main>
-
-  <footer role="contentinfo">
-    <div class="container" style="display:flex;flex-direction:column;gap:.6rem">
-      <div style="display:flex;justify-content:space-between;align-items:center;gap:1rem;flex-wrap:wrap">
-        <div class="small">© <span id="year"></span> Triple AAA</div>
-        <div class="small">Contacto: <a href="mailto:info@triple-aaa.example">info@triple-aaa.example</a></div>
+    <footer>
+      <div style="display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap">
+        <div>
+          © 2025 RastreoPaquetes — Hecho en Colombia • <a href="/privacy.html">Política de privacidad</a>
+        </div>
+        <div class="small">Tel: +57 1 800 000 0000 • ventas@tusitio.com</div>
       </div>
-
-      <div class="card" style="padding:.75rem">
-        <h3 style="margin:0 0 .4rem">Cesión de derechos</h3>
-        <p class="small">El autor original de este sitio declara, mediante este aviso, la cesión de todos los derechos patrimoniales y de explotación sobre el contenido y el código de este sitio a <strong>Triple AAA</strong>. Esto incluye derechos de reproducción, distribución, comunicación pública y transformación. Fecha de cesión: <span id="fechacesion"></span>.</p>
-        <p class="small">Nota: Para garantizar validez legal y cumplimiento con leyes locales se recomienda formalizar esta cesión mediante un documento firmado (contrato de cesión). Este texto sirve como aviso público y no sustituye asesoría legal profesional.</p>
-      </div>
-
-      <div class="rights">Todos los derechos reservados por Triple AAA — Uso permitido según las condiciones y leyes aplicables.</div>
-    </div>
-  </footer>
+    </footer>
+  </div>
 
   <script>
-    // Fill dynamic dates
-    document.getElementById('year').textContent = new Date().getFullYear();
-    document.getElementById('fechacesion').textContent = new Date().toLocaleDateString('es-ES');
+    // Pequeña lógica para el botón de rastreo (simulación)
+    document.getElementById('trackBtn').addEventListener('click', function(){
+      var n = document.getElementById('trackingNumber').value.trim();
+      if(!n){ alert('Por favor ingresa un número de guía.'); return; }
+      // En una implementación real redirigirías a /track?number=... o llamarías a tu API
+      window.location.href = '/track.html?number=' + encodeURIComponent(n);
+    });
+
+    function validateForm(){
+      var email = document.getElementById('email').value.trim();
+      if(!email) { alert('Ingresa un correo válido'); return false; }
+      return true;
+    }
+
+    // Capturar utm_source si viene en la URL (útil para Google Ads)
+    (function(){
+      try{
+        var params = new URLSearchParams(window.location.search);
+        var utm = params.get('utm_source') || params.get('gclid') ? (params.get('utm_source') || 'google_ads') : '';
+        document.getElementById('utm_source').value = utm;
+      }catch(e){/* ignorar */}
+    })();
   </script>
 </body>
 </html>
